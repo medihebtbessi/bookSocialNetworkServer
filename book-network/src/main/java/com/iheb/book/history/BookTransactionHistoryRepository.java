@@ -24,5 +24,5 @@ public interface BookTransactionHistoryRepository extends JpaRepository<BookTran
 
     @Query("select transaction from BookTransactionHistory  transaction where transaction.book.owner.id= :userId and transaction.book.id=:bookId and transaction.returned =true and transaction.returnApproved=false " )
 
-    Optional<BookTransactionHistory> findByBookIdandOwnerId(Integer bookId, Integer id);
+    Optional<BookTransactionHistory> findByBookIdandOwnerId(Integer bookId, Integer userId);
 }
